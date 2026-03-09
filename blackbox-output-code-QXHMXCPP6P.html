@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siaarah | Elegant Women's Wear</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #d4a373; /* Gold/Beige */
+            --secondary-color: #faedcd; /* Light Cream */
+            --text-dark: #333;
+            --text-light: #fff;
+            --accent-pink: #e5989b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-pink);
+        }
+
+        .cart-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-pink);
+        }
+
+        /* Collection Section */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 2rem;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--secondary-color);
+            padding: 4rem 20px;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .owner-name {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 3rem 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin: 1.5rem 0;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hidden on mobile for simplicity in this demo */
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Siaarah</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#" class="cart-btn" onclick="alert('Cart feature coming soon!')">Cart (0)</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Grace in Every Stitch</h1>
+        <p>Discover the perfect blend of tradition and modernity. From casual Kurtis to grand Anarkalis, Siaarah has a suit for every occasion.</p>
+        <a href="#collection" class="btn">Shop The Collection</a>
+    </section>
+
+    <!-- Collection Section -->
+    <section class="container" id="collection">
+        <h2 class="section-title">Our Latest Suits</h2>
+        <div class="collection-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1583391733958-e026b1335d2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Floral Suit" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Floral Anarkali</h3>
+                    <p class="product-price">₹2,499</p>
+                    <button class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="addToCart('Floral Anarkali')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1596783074918-c84cb06531ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cotton Kurti" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Cotton Casual Kurti</h3>
+                    <p class="product-price">₹999</p>
+                    <button class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="addToCart('Cotton Casual Kurti')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Party Wear Suit" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Royal Velvet Suit</h3>
+                    <p class="product-price">₹4,999</p>
+                    <button class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="addToCart('Royal Velvet Suit')">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Embroidered Salwar" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Embroidered Salwar Kameez</h3>
+                    <p class="product-price">₹3,200</p>
+                    <button class="btn" style="padding: 0.5rem 1rem; font-size: 0.8rem;" onclick="addToCart('Embroidered Salwar Kameez')">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2 class="section-title">About Siaarah</h2>
+            <p>At Siaarah, we believe that clothing is more than just fabric; it is an expression of your personality. We specialize in creating suits that suit different types of occasions, ensuring you look your best whether you are at work, a wedding, or a casual gathering.</p>
+            <br>
+            <p>Curated with love and attention to detail by our founder.</p>
+            <span class="owner-name">- Vashu, Brand Owner</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h3>Siaarah</h3>
+        <p>Bringing elegance to your wardrobe.</p>
+        <div class="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">WhatsApp</a>
+        </div>
+        <p>&copy; 2023 Siaarah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript to simulate adding items to cart
+        function addToCart(productName) {
+            alert(productName + " has been added to your cart!");
+        }
+    </script>
+
+</body>
+</html>
